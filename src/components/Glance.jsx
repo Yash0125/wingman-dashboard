@@ -55,7 +55,7 @@ const Glance = () => {
   return (
     <div
       className="flex flex-col h-full w-full
-    justify-start items-start border"
+    justify-start items-start"
     >
       <div className="flex flex-row items-center justify-between w-full p-4">
         <h2 className="text-3xl font-medium">At a glance</h2>
@@ -66,52 +66,6 @@ const Glance = () => {
           <option value="6months">6 months</option>
         </select>
       </div>
-
-      {/* <div className="flex flex-row h-full w-full flex-wrap  py-12 p-4 border border-red-400">
-      {glanceData.map((item) => (
-        <div
-          key={item.id}
-          className="flex flex-col h-[156px] w-96 shadow-md overflow-auto rounded-[20px] border border-yellow-400">         
-        
-          <div className="flex flex-row items-center justify-between p-4">            
-            <div className="flex flex-row items-center">
-              <Icon
-                icon={item.icon}
-                className="h-8 w-8 mr-2 text-yellow-400"
-              />
-              <h2 className="text-2xl font-medium">{item.title}</h2>            
-            </div>
-            <div className="flex flex-row items-center">
-              <h2 className="text-2xl font-medium">{item.value}</h2>
-              <Icon
-                icon="material-symbols:arrow-upward-rounded"
-                className="h-8 w-8 text-yellow-400"
-              />
-            </div>
-          </div>
-          <div className="flex flex-row items-center justify-between p-4">            
-            <div className="flex flex-row items-center">
-              <h2 className="text-2xl font-medium">{item.percentage}%</h2>
-              <Icon
-                icon="material-symbols:arrow-upward-rounded"
-                className="h-8 w-8 text-yellow-400"
-              />
-            </div>
-            <div className="flex flex-row items-center">
-              <h2 className="text-2xl font-medium">{item.value}</h2>
-              <Icon
-                icon="material-symbols:arrow-upward-rounded"
-                className="h-8 w-8 text-yellow-400"
-              />
-            </div>
-          </div>
-        </div>
-      ))
-      }
-      </div> */}
-      {/* <div className="flex flex-col h-[156px] w-96 shadow-md overflow-auto rounded-[20px] border border-yellow-400">
-
-        </div> */}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full p-4">
         {glanceData.map((item) => (
@@ -147,12 +101,16 @@ const Glance = () => {
                     item.increase ? "text-[#15B79F]" : "text-[#F04438]"
                   }`}
                 />
-                <span
-                  className={`text-sm font-medium text-[#667085]`}
-                >
-                 <span className={` ${
-                    item.increase ? "text-[#15B79F]" : "text-[#F04438]"
-                  }`}> {item.percentage}% </span>{item.increase ? "increase" : "decrease"}
+                <span className={`text-sm font-medium text-[#667085]`}>
+                  <span
+                    className={` ${
+                      item.increase ? "text-[#15B79F]" : "text-[#F04438]"
+                    }`}
+                  >
+                    {" "}
+                    {item.percentage}%{" "}
+                  </span>
+                  {item.increase ? "increase" : "decrease"}
                 </span>
               </div>
             </div>
