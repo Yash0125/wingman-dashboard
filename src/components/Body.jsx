@@ -1,6 +1,7 @@
 import Glance from "./Glance";
 import Header from "./Header";
 import Insights from "./Insights";
+import Order from "./Order";
 
 const Body = () => {
   return (
@@ -10,6 +11,7 @@ const Body = () => {
 
       <Glance/>
       <Insights/>
+      <Order/>
       </div>
     </div>
   );
