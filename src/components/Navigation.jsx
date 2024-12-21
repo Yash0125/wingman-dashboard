@@ -1,8 +1,8 @@
 import Logo from "./../assets/Logo.png";
 import { Icon } from "@iconify/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Navigation = () => {
+const Navigation = ({ currentPage, setCurrentPage }) => {
   const [selectedIcon, setSelectedIcon] = useState("home");
 
   const navIcons = [
@@ -23,6 +23,23 @@ const Navigation = () => {
     },
   ];
 
+  useEffect(() => {
+    if (currentPage === "chats") {
+      setSelectedIcon("messages");
+    } else {
+      setSelectedIcon("home");
+    }
+  }, [currentPage]);
+
+  const handleIconClick = (id) => {
+    setSelectedIcon(id);
+    if (id === "messages") {
+      setCurrentPage("chats");
+    } else {
+      setCurrentPage("home");
+    }
+  };
+
   return (
     <div className="flex flex-col bg-[#115E56] h-screen w-14 justify-between items-center">
       <div className="flex flex-col items-center">
@@ -35,7 +52,7 @@ const Navigation = () => {
           {navIcons.map((item) => (
             <div
               key={item.id}
-              onClick={() => setSelectedIcon(item.id)}
+              onClick={() => handleIconClick(item.id)}
               className={`h-[36px] w-[36px] rounded-[8px] flex justify-center items-center cursor-pointer transition-all duration-200 ${
                 selectedIcon === item.id ? "bg-white" : ""
               }`}
