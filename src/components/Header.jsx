@@ -2,12 +2,12 @@ import { useState } from "react";
 import { Icon } from "@iconify/react";
 
 const Header = () => {
-  const [selected, setSelected] = useState("");
+  const [selected, setSelected] = useState("summary");
 
   const items = [
-    { id: "graph", icon: "ph:chart-pie-slice-fill", text: "Summary" },
-    { id: "tags", icon: "mdi:tag", text: "Sales" },
-    { id: "chat", icon: "fluent:chat-28-filled", text: "Chats" },
+    { id: "summary", icon: "ph:chart-pie-slice-fill", text: "Summary" },
+    { id: "sales", icon: "mdi:tag", text: "Sales" },
+    { id: "chats", icon: "fluent:chat-28-filled", text: "Chats" },
   ];
 
 
